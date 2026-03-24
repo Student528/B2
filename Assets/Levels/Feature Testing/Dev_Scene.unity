@@ -291,6 +291,62 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346568389}
   m_Mesh: {fileID: -4504947661552471319, guid: 8e2f382b7fcff954497717dcebe5a560, type: 3}
+--- !u!1 &1031309523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1031309525}
+  - component: {fileID: 1031309524}
+  m_Layer: 6
+  m_Name: Decal Projector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1031309524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031309523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 7b55a75e16cb62944ba2f18eb9c70a29, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 4, y: 4.9999995}
+  m_UVBias: {x: -2, y: -4.9999995}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: -0.5, y: -3.0000014, z: -1.4999139}
+  m_Size: {x: 4, y: 4.9999995, z: 4.999999}
+  m_FadeFactor: 1
+--- !u!4 &1031309525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031309523}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5000004, y: -0, z: -0, w: 0.8660252}
+  m_LocalPosition: {x: 0, y: 3.25, z: 3}
+  m_LocalScale: {x: 2, y: 6, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!1 &1264893835
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,8 +497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f8d595174fc5a438cba8d3c5b0e0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 400
-  sensY: 400
+  sensX: 1000
+  sensY: 1000
   orientation: {fileID: 346568390}
 --- !u!1 &1318271362
 GameObject:
@@ -502,6 +558,7 @@ GameObject:
   - component: {fileID: 1374257632}
   - component: {fileID: 1374257634}
   - component: {fileID: 1374257635}
+  - component: {fileID: 1374257636}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -586,20 +643,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 1374257631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e8b8554393ee2545887c3ce9df3cdfd, type: 3}
+  m_Script: {fileID: 11500000, guid: e249a08090c4a174c84de5282358e6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
   groundDrag: 5
+  jumpForce: 12
+  jumpCooldown: 0.25
+  airMultiplier: 0.4
   playerHeight: 2
   WhatIsGround:
-    m_Bits: 0
-  grouded: 0
+    serializedVersion: 2
+    m_Bits: 64
   orientation: {fileID: 346568390}
-  horizontalInput: 0
-  verticalInput: 0
-  moveDirection: {x: 0, y: 0, z: 0}
-  rb: {fileID: 0}
+--- !u!114 &1374257636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374257631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1776683366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,3 +1418,4 @@ SceneRoots:
   - {fileID: 1828192811}
   - {fileID: 1318271363}
   - {fileID: 1374257633}
+  - {fileID: 1031309525}

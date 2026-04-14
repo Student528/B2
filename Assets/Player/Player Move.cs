@@ -59,7 +59,8 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
-
+      
+       
         if (PreviousGrounded != grounded)
         {
 
@@ -78,6 +79,7 @@ public class PlayerMove : MonoBehaviour
                     Collider.material.staticFriction = 0f;
                 }
             }
+       
         }
 
 
@@ -87,10 +89,11 @@ public class PlayerMove : MonoBehaviour
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, WhatIsGround);
         
         
-        SpeedControl();
+           SpeedControl();
     
             if (DisablePlaneMovement == false && grounded)
             {
+             
                 MyInput();
 
             }
@@ -104,7 +107,7 @@ public class PlayerMove : MonoBehaviour
         else
             rb.linearDamping = 0;
  
-
+        //print(grounded);
 
   
     }

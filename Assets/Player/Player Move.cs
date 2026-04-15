@@ -38,6 +38,9 @@ public class PlayerMove : MonoBehaviour
     private float Friction_Until;
     public Transform orientation;
 
+    [Header("Visual")]
+
+    public GameObject MeshHolder;
     float horizontalInput;
     float verticalInput;
 
@@ -133,8 +136,7 @@ public class PlayerMove : MonoBehaviour
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-   
-
+        transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
         //on ground
         if (grounded)
         {

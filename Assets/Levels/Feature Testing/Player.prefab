@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2916003813506692966}
   - component: {fileID: 2019781244117652953}
   m_Layer: 0
-  m_Name: PlayerObj
+  m_Name: PlayerMeshHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801302088961313824}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -198,13 +198,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122931641713691498}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071069, y: -0.000000007450581, z: -0.000000007450581, w: 0.70710677}
-  m_LocalPosition: {x: -0.000000059604645, y: 1.8000003, z: 0.00000071525574}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.8, y: 2.6100001, z: 0.00000071525574}
   m_LocalScale: {x: 0.8, y: 0.80000025, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6914284538081925667}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &931833855565844568
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 6644148494441254973}
   - component: {fileID: 1286953608891969101}
   - component: {fileID: 7361562451612593419}
+  - component: {fileID: 7534514099664013834}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -358,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e249a08090c4a174c84de5282358e6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
+  moveSpeed: 4
   groundDrag: 5
   jumpForce: 5
   jumpCooldown: 1
@@ -369,6 +370,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   orientation: {fileID: 7288767446284642815}
+  MeshHolder: {fileID: 0}
 --- !u!114 &7361562451612593419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,3 +401,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7534514099664013834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370038997338586634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2bc5d117b8105b4e8538f6df4b413c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerTransform: {fileID: 0}
+  Weapon: {fileID: 0}
+  Camera: {fileID: 0}
+  range: 2
+  open: 100
